@@ -1,0 +1,8 @@
+{
+  name: "statusbot",
+  version: "1.0",
+  main: "bot.js"
+dependencies: {
+    "discord.js": "^12"
+  }
+}
