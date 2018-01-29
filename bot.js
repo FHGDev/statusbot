@@ -24,16 +24,39 @@ bot.on("message", message => {
   }
   if (message.content == prefix + "changestatus") {
     if (!args) {
+      bot.user.setActivity('', {type: "PLAYING"})
+    } 
+    if (!args[0]) {
       return
     } else {
-      let game = args[0]
-      if (args[0]) {
-        let game = ""
-        
+      if (args[1]) {
+        let game = args[1]
+        let type = args[2]
+        bot.user.setActivity(game, {type: type})
+        console.log(`Set the Selfbot's Activity to ${type} ${game}!`)
+      }
+      if (!args[1]) {
+        let game = args[2]
+        let type = args[3]
+        bot.user.setActivity(game, {type: type})
+        console.log(`Set the Selfbot's Activity to ${type} ${game}!`)
+      }
+      if (!args[2]) {
+        let game = args[3]
+        let type = args[4]
+        bot.user.setActivity(game, {type: type})
+        console.log(`Set the Selfbot's Activity to ${type} ${game}`)
+      }
+      if (!args[3]) {
+        let game=args[4],
+        type=args[5]
+        bot.user.setActivity(game, {type: type})
+        console.log(`Set the Selfbot's Activity to ${type} ${game}!`)
+      }
+      if (!args[3]) {
+        return;
       }
     }
-    let type = args[3]
-    bot.user.setActivity(game, {type: type})
   }
 })
 
