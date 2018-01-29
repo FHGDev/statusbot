@@ -23,7 +23,15 @@ bot.on("message", message => {
     bot.user.setStatus(`invisible`)
   }
   if (message.content == prefix + "changestatus") {
-    let game = args[0,1,2]
+    if (!args) {
+      return
+    } else {
+      let game = args[0]
+      if (args[0]) {
+        let game = ""
+        
+      }
+    }
     let type = args[3]
     bot.user.setActivity(game, {type: type})
   }
