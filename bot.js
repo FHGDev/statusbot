@@ -4,7 +4,7 @@ const prefix = ".."
 
 bot.on('ready', () => {
   bot.user.setActivity('Linkin Park', {type: "LISTENING"})
-  console.log(`Selfbot Started at ${new Date().getTime()}`)
+  console.log(`Selfbot Started at ${new Date().getTime().toString()}`)
 })
 
 bot.on("message", message => {
