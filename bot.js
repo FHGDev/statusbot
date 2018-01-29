@@ -9,7 +9,7 @@ bot.on('ready', () => {
 
 bot.on("message", message => {
   let args = message.content.split(' ').slice(0)
-  if (!message.author.id == bot.id) return;
+  if (!message.author.id == 242734840829575169) return;
   
   if (message.content == prefix + "dnd") {
     bot.user.setStatus(`dnd`)
