@@ -4,7 +4,7 @@ const prefix = ".."
 
 bot.on('ready', () => {
   bot.user.setActivity('Linkin Park', {type: "LISTENING"})
-  console.log(`Selfbot Started at ${new Date().getTime().toString()}`)
+  console.log(`Selfbot Started at ${new Date().toString()}`)
 })
 
 bot.on("message", message => {
@@ -12,52 +12,20 @@ bot.on("message", message => {
   if (!message.author.id == 242734840829575169) return;
   
   if (message.content == prefix + "dnd") {
+    message.delete(1000)
     bot.user.setStatus(`dnd`)
   } 
   if (message.content == prefix + "online") {
+    message.delete(1000)
     bot.user.setStatus(`online`)
   }
   if (message.content == prefix + "idle") {
+    message.delete(1000)
     bot.user.setStatus(`idle`)
   }
   if (message.content == prefix + "inv") {
+    message.delete(1000)
     bot.user.setStatus(`invisible`)
-  }
-  if (message.content == prefix + "changestatus") {
-    if (!args) {
-      bot.user.setActivity('', {type: "PLAYING"})
-    } 
-    if (!args[0]) {
-      return
-    } else {
-      if (args[1]) {
-        let game = args[1]
-        let type = args[2]
-        bot.user.setActivity(game, {type: type})
-        console.log(`Set the Selfbot's Activity to ${type} ${game}!`)
-      }
-      if (!args[1]) {
-        let game = args[2]
-        let type = args[3]
-        bot.user.setActivity(game, {type: type})
-        console.log(`Set the Selfbot's Activity to ${type} ${game}!`)
-      }
-      if (!args[2]) {
-        let game = args[3]
-        let type = args[4]
-        bot.user.setActivity(game, {type: type})
-        console.log(`Set the Selfbot's Activity to ${type} ${game}`)
-      }
-      if (!args[3]) {
-        let game=args[4],
-        type=args[5]
-        bot.user.setActivity(game, {type: type})
-        console.log(`Set the Selfbot's Activity to ${type} ${game}!`)
-      }
-      if (!args[3]) {
-        return;
-      }
-    }
   }
 })
 
