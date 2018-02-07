@@ -16,7 +16,7 @@ bot.on("message", message => {
     bot.user.setStatus(`dnd`)
   } 
   if (message.content == prefix + "online") {
-    message.delete(1000)
+    message.delete(1000) 
     bot.user.setStatus(`online`)
   }
   if (message.content == prefix + "idle") {
