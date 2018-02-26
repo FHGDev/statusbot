@@ -11,8 +11,8 @@ bot.on('ready', () => {
 })
 
 bot.on("message", message => {
-  let msgArray = message.content.split(' ')
-  let args = msgArray.slice(prefix.length)
+  let args = message.content.split(' ').slice(1) 
+  
   if (!message.author.id == 242734840829575169) return;
   
   if (message.content == prefix + "dnd") {
