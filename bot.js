@@ -12,12 +12,8 @@ bot.on('ready', () => {
 
 bot.on("message", message => {
   let msgArray = message.content.split(' ')
-  let args = msgArray.slice(0)
+  let args = msgArray.slice(prefix.length)
   if (!message.author.id == 242734840829575169) return;
-  
-  if (message.content == prefix + "setname") {
-    bot.user.setUsername(args[0])
-  }
   
   if (message.content == prefix + "dnd") {
     message.delete(1000)
