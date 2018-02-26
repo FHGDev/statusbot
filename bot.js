@@ -5,12 +5,15 @@ const prefix = ".."
 bot.on('ready', () => {
   bot.user.setActivity('Linkin Park', {type: "LISTENING"})
   console.log(`Selfbot Started at ${new Date().toString()}`)
-  console.log(bot.guilds.get('360437577117073418').iconURL)
 })
 
 bot.on("message", message => {
   let args = message.content.split(' ').slice(0)
   if (!message.author.id == 242734840829575169) return;
+  
+  if (message.content == prefix + "setname") {
+    bot.user.setUsername(args[0])
+  }
   
   if (message.content == prefix + "dnd") {
     message.delete(1000)
