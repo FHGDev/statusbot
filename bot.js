@@ -3,7 +3,10 @@ const bot = new discord.Client()
 const prefix = ".."
 
 bot.on('ready', () => {
+  bot.user.setActivity('my selfbot load...', {type: "WATCHING"})
+  setTimeout(() => {
   bot.user.setActivity('Linkin Park', {type: "LISTENING"})
+  }, 10000)
   console.log(`Selfbot Started at ${new Date().toString()}`)
 })
 
