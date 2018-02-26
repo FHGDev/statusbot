@@ -11,7 +11,8 @@ bot.on('ready', () => {
 })
 
 bot.on("message", message => {
-  let args = message.content.split(' ').slice(0)
+  let msgArray = message.content.split(' ')
+  let args = msgArray.slice(0)
   if (!message.author.id == 242734840829575169) return;
   
   if (message.content == prefix + "setname") {
