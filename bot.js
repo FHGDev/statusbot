@@ -8,7 +8,8 @@ bot.on('ready', () => {
 })
 
 bot.on("message", message => {
-  let args = message.content.split(' ').slice(1) 
+  
+  const args = message.content.slice(prefix.length).trim().split(/ +/g).shift().toLowerCase();  
   
   if (!message.author.id == 242734840829575169) return;
   
@@ -32,6 +33,10 @@ bot.on("message", message => {
   if (message.content == prefix + "inv") {
     message.delete(100)
     bot.user.setStatus(`invisible`)
+  }
+  if (message.content == prefix + "setgame") {
+    let [game, type] = args 
+    bot.user.setActivity(game, {type: type})
   }
 })
 
