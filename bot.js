@@ -5,7 +5,6 @@ const prefix = ".."
 bot.on('ready', () => {
   bot.user.setActivity('ROBLOX', {type: "PLAYING"})
   console.log(`Selfbot Started at ${new Date().toString()}`)
-  console.log(bot.guilds.get('413741430704701453').iconURL)
 })
 
 bot.on("message", message => {
