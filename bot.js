@@ -9,8 +9,8 @@ bot.on('ready', () => {
 })
 
 bot.on("message", message => {
-  
-  const args = message.content.slice(prefix.length).trim().split(/ +/g).shift().toLowerCase();  
+  let mArray = message.content.split(" ")
+  let args = mArray.slice(1)
   
   if (!message.author.id == 242734840829575169) return;
   
