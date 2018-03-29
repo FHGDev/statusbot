@@ -3,7 +3,7 @@ const bot = new discord.Client()
 const prefix = ".."
 
 bot.on('ready', () => {
-  bot.user.setActivity('ROBLOX', {type: "PLAYING"})
+  bot.user.setActivity('If my status isn\'t set to online, ignore this', {type: "PLAYING"})
   console.log(`Selfbot Started at ${new Date().toString()}`)
 })
 
@@ -35,9 +35,8 @@ bot.on("message", message => {
     bot.user.setStatus(`invisible`)
   }
   if (message.content == prefix + "setgame") {
-    let game = args[0]
-    let type = args[1]
-    bot.user.setActivity(game, {type: type})
+    let game = args.join(' ')
+    bot.user.setActivity(game, { type: "WATCHING" })
   }
 })
 
