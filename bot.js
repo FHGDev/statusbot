@@ -3,7 +3,7 @@ const bot = new discord.Client()
 const prefix = ".."
 
 bot.on('ready', () => {
-  bot.user.setActivity('If my status isn\'t set to online, ignore this', {type: "PLAYING"})
+  bot.user.setActivity('Helping my dad, don\'t ping please.', {type: "PLAYING"})
   bot.user.setStatus("Invisible")
   console.log(`Selfbot Started at ${new Date().toString()}`)
 })
