@@ -4,6 +4,7 @@ const prefix = ".."
 
 bot.on('ready', () => {
   bot.user.setActivity('If my status isn\'t set to online, ignore this', {type: "PLAYING"})
+  bot.user.setStatus("Invisible")
   console.log(`Selfbot Started at ${new Date().toString()}`)
 })
 
