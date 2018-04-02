@@ -3,14 +3,14 @@ const bot = new discord.Client()
 const prefix = ".."
 
 bot.on('ready', () => {
-  bot.user.setActivity('chilling', {type: "PLAYING"})
-  bot.user.setStatus("Invisible")
-  console.log(`Selfbot Started at ${new Date().toString()}`)
+  bot.user.setActivity('Minecraft', {type: "PLAYING"})
+  bot.user.setStatus(`dnd`)
+  console.log(`Selfbot Started at ${Date()}`)
 })
 
 bot.on("message", message => {
   let mArray = message.content.split(" ")
-  let args = mArray.slice(1)
+  let args = mArray.slice(prefix.length)
   
   if (!message.author.id == 242734840829575169) return;
   
