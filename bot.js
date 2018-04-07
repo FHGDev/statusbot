@@ -3,12 +3,20 @@ const bot = new discord.Client()
 const prefix = ".."
 
 bot.on('ready', () => {
-  bot.user.setActivity('Minecraft', {type: "PLAYING"})
+  bot.user.setActivity('Dev mode | Don\'t Ping.', {type: "PLAYING"})
   bot.user.setStatus(`dnd`)
   console.log(`Selfbot Started at ${Date()}`)
 })
 
 bot.on("message", message => {
+  if (message.content.includes("discord.gg/")) {
+    if (message.author.id == 251928361851551756) {
+      message.channel.send("Alright, I warned you. I hate to do this, but I'm blocking you. :sob:")
+      setTimeout(() => {
+        message.author.block()
+      }, 10000)
+    }
+  }
   let mArray = message.content.split(" ")
   let args = mArray.slice(prefix.length)
   
