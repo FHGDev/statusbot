@@ -9,14 +9,6 @@ bot.on('ready', () => {
 })
 
 bot.on("message", message => {
-  if (message.content.includes("discord.gg/")) {
-    if (message.author.id == 251928361851551756) {
-      message.channel.send("Alright, I warned you. I hate to do this, but I'm blocking you. :sob:")
-      setTimeout(() => {
-        message.author.block()
-      }, 10000)
-    }
-  }
   let mArray = message.content.split(" ")
   let args = mArray.slice(prefix.length)
   
