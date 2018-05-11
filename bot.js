@@ -4,7 +4,6 @@ const prefix = ".."
 
 bot.on('ready', () => {
   bot.user.setActivity('Dev mode | Don\'t Ping.', {type: "PLAYING"})
-  bot.user.setStatus(`dnd`)
   console.log(`Selfbot Started at ${Date()}`)
 })
 
