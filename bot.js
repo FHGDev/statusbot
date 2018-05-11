@@ -14,7 +14,7 @@ bot.on("message", message => {
   if (!message.author.id == 242734840829575169) return;
   
   if (message.content == prefix + "setname") {
-    bot.user.setUsername(args[0])
+    bot.user.setUsername(args.join(" ")) 
     message.delete(100)
   }
   
@@ -35,8 +35,8 @@ bot.on("message", message => {
     bot.user.setStatus(`invisible`)
   }
   if (message.content == prefix + "setgame") {
-    let game = args.join(' ')
-    bot.user.setActivity(game, { type: "WATCHING" })
+    let [type, game] = args
+    bot.user.setActivity(game, { type: type.toUppercase() })
   }
 })
 
