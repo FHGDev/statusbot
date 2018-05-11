@@ -11,7 +11,7 @@ bot.on("message", message => {
   let mArray = message.content.split(" ")
   let args = mArray.slice(1)
   
-  if (!message.author.id == 242734840829575169) return;
+  if (!message.author.id == "242734840829575169") return;
   
   if (message.content == prefix + "setname") {
     bot.user.setUsername(args.join(" ")) 
