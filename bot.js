@@ -35,6 +35,7 @@ bot.on("message", message => {
     bot.user.setStatus(`invisible`)
   }
   if (message.content.startsWith(prefix + "setgame")) {
+    message.delete(100)
     let [type, game] = args
     bot.user.setActivity(game, { type: type })
   }
